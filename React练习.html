@@ -11,37 +11,37 @@
     <div id="example"></div>
     <script type="text/babel">
   	  var myStyle = {
-	  	  backgroundColor: 'black',
-	  	  color: 'white',
-    	  width: 100,
-    	  padding: 25,
-   		  margin:25,
-  		  opacity: 0.6
+	  	backgroundColor: 'black',
+	  	color: 'white',
+    	  	width: 100,
+    	 	padding: 25,
+   		margin:25,
+  		opacity: 0.6
 	   };
      var Test = React.createClass({
       getInitialState: function() {
         return {
-		    	  value: '0',
-		      	mod: 'Day'
-			  };
+		value: '0',
+		mod: 'Day'
+	};
       },
       handleChange: function(event) {
         this.setState({value: event.target.value});
       },
-	    handleSelect:function(event){
+      handleSelect:function(event){
         this.setState({mod: event.target.value});
-   	  },	
+      },	
       render: function() {
         var value = this.state.value;
-		    var mod=this.state.mod;
+	var mod=this.state.mod;
         return <div>
                 <input type="text" size="5" value={this.state.value} onChange={this.handleChange}/> 
-				        <select id="mod" name="mod" value ={this.state.mod} onChange={this.handleSelect}>
+		<select id="mod" name="mod" value ={this.state.mod} onChange={this.handleSelect}>
                   <option value='Day'>Day</option>
                   <option value='Week'>Week</option>
                   <option value='Month'>Month</option>
                   <option value='Year'>Year</option>
-				        </select>
+		</select>
                 <div style={myStyle}>${value}/{mod}</div>
                </div>;
       }
